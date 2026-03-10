@@ -174,13 +174,10 @@ st.set_page_config(page_title="Treinos", page_icon="🏋️", layout="wide")
 # GOOGLE SHEETS
 # =========================
 @st.cache_resource
+@st.cache_resource
 def get_gspread_client():
-    try:
-        if "gcp_service_account" in st.secrets:
-            creds_dict = dict(st.secrets["gcp_service_account"])
-            return gspread.service_account_from_dict(creds_dict)
-    except Exception:
-        pass
+    if "gcp_service_account" in st.secrets:
+        return gspread.service_account_from_dict(dict(st.secrets["gcp_service_account"]))
 
     return gspread.service_account(filename="credenciais.json")
 
@@ -1175,4 +1172,5 @@ elif pagina == "Progresso":
     st.dataframe(hist, use_container_width=True, hide_index=True)
 
 st.divider()
+
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
