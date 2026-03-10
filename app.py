@@ -642,7 +642,7 @@ if pagina == "Treino":
         st.caption("Troque exercícios, remova ou adicione novos.")
 
         lista_exercicios = sorted(MAP_GRUPOS.keys())
-
+        for i, ex in enumerate(st.session_state[chave_ficha]):
         if "ficha_edit" not in st.session_state:
             st.session_state.ficha_edit = resumo_df[cols_mostrar].to_dict("records")
 
@@ -698,7 +698,7 @@ if pagina == "Treino":
                 col_series: 3,
                 col_reps: 10
             })
-            st.session_state.ficha_edit = nova_ficha
+            st.session_state[chave_ficha] = nova_ficha
             st.rerun()
             
         if st.button("💾 Salvar ficha"):
@@ -719,7 +719,7 @@ if pagina == "Treino":
                 st.error("Erro ao salvar ficha.")
                 st.exception(e)
 
-        st.session_state.ficha_edit = nova_ficha
+        st.session_state[chave_ficha] = nova_ficha
     st.caption("A tela mostra só o necessário: último peso, média, melhor peso e sugestão de próxima carga.")
 
     registros_para_salvar = []
@@ -1174,3 +1174,4 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
