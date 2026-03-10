@@ -772,7 +772,7 @@ if pagina == "Treino":
                 col_series: 3,
                 col_reps: 10
             })
-            st.session_state[chave_ficha] = nova_ficha
+            st.session_state.ficha_edit = nova_ficha
             st.rerun()
             
         if st.button("💾 Salvar ficha"):
@@ -1248,6 +1248,7 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
 
 
