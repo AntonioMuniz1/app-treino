@@ -442,6 +442,76 @@ def registrar_series_em_lote(registros: list[list]) -> None:
     ws = get_worksheet(SHEET_HISTORICO)
     ws.append_rows(registros, value_input_option="USER_ENTERED")
     st.cache_data.clear()
+def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
+
+    ws = get_worksheet(SHEET_HISTORICO)
+
+    registros = []
+
+    agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    semana = int(datetime.now().isocalendar()[1])
+
+    for ex in ficha:
+
+        exercicio = ex.get("Exercicio") or ex.get("Exercício")
+
+        registros.append([
+            agora,
+            cpf,
+            semana,
+            treino,
+            f"FICHA::{exercicio}",
+            inferir_grupo(exercicio),
+            "",
+            ex.get("Reps", ""),
+            ex.get("Series", ""),
+            "",
+            "",
+            "FICHA_USUARIO"
+        ])
+
+    ws.append_rows(registros, value_input_option="USER_ENTERED")
+
+    st.cache_data.clear()
+
+
+def carregar_ficha_usuario(df_hist, cpf, treino):
+
+    if df_hist.empty:
+        return None
+
+    col_ex = achar_coluna(df_hist, POSSIVEIS_COLUNAS_EXERCICIO)
+    col_cpf = achar_coluna(df_hist, POSSIVEIS_COLUNAS_CPF)
+    col_treino = achar_coluna(df_hist, POSSIVEIS_COLUNAS_TREINO)
+
+    if not col_ex:
+        return None
+
+    df = df_hist.copy()
+
+    df = df[
+        (df[col_cpf].astype(str) == str(cpf)) &
+        (df[col_treino] == treino) &
+        (df[col_ex].astype(str).str.startswith("FICHA::"))
+    ]
+
+    if df.empty:
+        return None
+
+    ficha = []
+
+    for _, row in df.iterrows():
+
+        exercicio = str(row[col_ex]).replace("FICHA::", "")
+
+        ficha.append({
+            "Exercicio": exercicio,
+            "Grupo": inferir_grupo(exercicio),
+            "Series": to_int(row.get("Series", 3)),
+            "Reps": to_int(row.get("Reps", 10))
+        })
+
+    return ficha
 
 def atualizar_ficha_treino(nome_treino: str, df_editado: pd.DataFrame):
 
@@ -642,10 +712,15 @@ if pagina == "Treino":
         st.caption("Troque exercícios, remova ou adicione novos.")
 
         lista_exercicios = sorted(MAP_GRUPOS.keys())
-        for i, ex in enumerate(st.session_state[chave_ficha]):
+        for i, ex in enumerate(st.session_state.ficha_edit):
         if "ficha_edit" not in st.session_state:
-            st.session_state.ficha_edit = resumo_df[cols_mostrar].to_dict("records")
 
+            ficha_usuario = carregar_ficha_usuario(df_hist, cpf, treino_escolhido)
+
+            if ficha_usuario:
+                st.session_state.ficha_edit = ficha_usuario
+            else:
+                st.session_state.ficha_edit = resumo_df[cols_mostrar].to_dict("records")            
         nova_ficha = []
 
         for i, ex in enumerate(st.session_state.ficha_edit):
@@ -710,7 +785,7 @@ if pagina == "Treino":
             df_salvar = pd.DataFrame(nova_ficha)
 
             try:
-                atualizar_ficha_treino(treino_escolhido, df_salvar)
+                salvar_ficha_usuario(cpf, treino_escolhido, nova_ficha)
                 st.success("Ficha atualizada com sucesso.")
                 st.session_state.ficha_edit = df_salvar.to_dict("records")
                 st.rerun()
@@ -1174,4 +1249,5 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
