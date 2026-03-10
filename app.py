@@ -711,8 +711,7 @@ if pagina == "Treino":
 
         st.caption("Troque exercícios, remova ou adicione novos.")
 
-        lista_exercicios = sorted(MAP_GRUPOS.keys())
-        for i, ex in enumerate(st.session_state.ficha_edit):
+        lista_exercicios = sorted(MAP_GRUPOS.keys())            
         if "ficha_edit" not in st.session_state:
 
             ficha_usuario = carregar_ficha_usuario(df_hist, cpf, treino_escolhido)
@@ -1249,5 +1248,6 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
 
