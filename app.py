@@ -174,7 +174,6 @@ st.set_page_config(page_title="Treinos", page_icon="🏋️", layout="wide")
 # GOOGLE SHEETS
 # =========================
 @st.cache_resource
-@st.cache_resource
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
         return gspread.service_account_from_dict(dict(st.secrets["gcp_service_account"]))
@@ -446,6 +445,19 @@ def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
 
     ws = get_worksheet(SHEET_HISTORICO)
 
+    # remover fichas antigas desse CPF
+    dados = ws.get_all_values()
+    cab = dados[0]
+    linhas = dados[1:]
+
+    novas_linhas = [
+        l for l in linhas
+        if not (l[1] == str(cpf) and str(l[4]).startswith("FICHA::"))
+    ]
+
+    ws.clear()
+    ws.update("A1", [cab] + novas_linhas)
+
     registros = []
 
     agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
@@ -619,7 +631,12 @@ with st.sidebar:
 
     pagina = st.radio("Página", ["Treino", "Progresso"], horizontal=False)
     cpf = st.text_input("CPF do paciente", placeholder="Digite o CPF")
-
+    if "cpf_atual" not in st.session_state:
+        st.session_state.cpf_atual = cpf
+    if st.session_state.cpf_atual != cpf:
+        st.session_state.pop("ficha_edit", None)
+        st.session_state.cpf_atual = cpf
+        
     df_pacientes = carregar_pacientes()
     nome_paciente = ""
 
@@ -793,7 +810,7 @@ if pagina == "Treino":
                 st.error("Erro ao salvar ficha.")
                 st.exception(e)
 
-        st.session_state[chave_ficha] = nova_ficha
+        st.session_state.ficha_edit = nova_ficha
     st.caption("A tela mostra só o necessário: último peso, média, melhor peso e sugestão de próxima carga.")
 
     registros_para_salvar = []
@@ -1248,6 +1265,7 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
 
 
