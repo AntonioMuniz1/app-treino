@@ -37,26 +37,42 @@ MAP_TREINOS = {
 }
 
 MAP_GRUPOS = {
+    # =========================
+    # PEITO
+    # =========================
     "supino": "Peito",
     "supino reto": "Peito",
     "supino inclinado": "Peito",
     "supino declinado": "Peito",
     "supino halteres": "Peito",
     "supino barra": "Peito",
+    "supino máquina": "Peito",
+    "supino maquina": "Peito",
+    "chest press": "Peito",
     "crucifixo": "Peito",
     "crucifixo reto": "Peito",
     "crucifixo inclinado": "Peito",
+    "crucifixo declinado": "Peito",
     "crucifixo máquina": "Peito",
+    "crucifixo maquina": "Peito",
     "peck deck": "Peito",
     "voador": "Peito",
     "flexão": "Peito",
     "flexao": "Peito",
+    "cross over": "Peito",
+    "crossover": "Peito",
+    "cabo alto": "Peito",
+    "cabo baixo": "Peito",
 
+    # =========================
+    # COSTAS
+    # =========================
     "barra fixa": "Costas",
     "barra": "Costas",
     "puxada": "Costas",
     "puxada frente": "Costas",
     "puxada atrás": "Costas",
+    "puxada atras": "Costas",
     "puxada alta": "Costas",
     "pulldown": "Costas",
     "remada": "Costas",
@@ -64,9 +80,15 @@ MAP_GRUPOS = {
     "remada baixa": "Costas",
     "remada cavalinho": "Costas",
     "remada máquina": "Costas",
+    "remada maquina": "Costas",
     "remada unilateral": "Costas",
+    "serrote": "Costas",
     "pullover": "Costas",
+    "rack pull": "Costas",
 
+    # =========================
+    # OMBRO
+    # =========================
     "elevação lateral": "Ombro",
     "elevacao lateral": "Ombro",
     "elevação frontal": "Ombro",
@@ -75,11 +97,17 @@ MAP_GRUPOS = {
     "desenvolvimento halteres": "Ombro",
     "desenvolvimento barra": "Ombro",
     "desenvolvimento máquina": "Ombro",
+    "desenvolvimento maquina": "Ombro",
     "arnold press": "Ombro",
     "crucifixo invertido": "Ombro",
     "face pull": "Ombro",
     "remada alta": "Ombro",
+    "elevação lateral polia": "Ombro",
+    "elevacao lateral polia": "Ombro",
 
+    # =========================
+    # BÍCEPS
+    # =========================
     "rosca direta": "Bíceps",
     "rosca barra": "Bíceps",
     "rosca halteres": "Bíceps",
@@ -87,10 +115,15 @@ MAP_GRUPOS = {
     "rosca concentrada": "Bíceps",
     "rosca scott": "Bíceps",
     "rosca scott máquina": "Bíceps",
+    "rosca scott maquina": "Bíceps",
     "rosca martelo": "Bíceps",
     "rosca 21": "Bíceps",
     "rosca inversa": "Bíceps",
+    "curl": "Bíceps",
 
+    # =========================
+    # TRÍCEPS
+    # =========================
     "tríceps testa": "Tríceps",
     "triceps testa": "Tríceps",
     "tríceps corda": "Tríceps",
@@ -102,7 +135,13 @@ MAP_GRUPOS = {
     "tríceps banco": "Tríceps",
     "triceps banco": "Tríceps",
     "mergulho": "Tríceps",
+    "paralela": "Tríceps",
+    "coice tríceps": "Tríceps",
+    "coice triceps": "Tríceps",
 
+    # =========================
+    # QUADRÍCEPS
+    # =========================
     "agachamento": "Quadríceps",
     "agachamento livre": "Quadríceps",
     "agachamento smith": "Quadríceps",
@@ -116,17 +155,28 @@ MAP_GRUPOS = {
     "lunge": "Quadríceps",
     "afundo": "Quadríceps",
     "bulgarian": "Quadríceps",
+    "agachamento búlgaro": "Quadríceps",
+    "agachamento bulgaro": "Quadríceps",
+    "sissy squat": "Quadríceps",
 
+    # =========================
+    # POSTERIOR
+    # =========================
     "stiff": "Posterior",
     "peso morto": "Posterior",
     "deadlift": "Posterior",
     "mesa flexora": "Posterior",
     "flexora": "Posterior",
     "flexora em pé": "Posterior",
+    "flexora em pe": "Posterior",
     "flexora sentado": "Posterior",
     "good morning": "Posterior",
     "hip hinge": "Posterior",
+    "rdl": "Posterior",
 
+    # =========================
+    # GLÚTEO
+    # =========================
     "hip thrust": "Glúteo",
     "glute bridge": "Glúteo",
     "abdução": "Glúteo",
@@ -135,22 +185,34 @@ MAP_GRUPOS = {
     "coice": "Glúteo",
     "elevação pélvica": "Glúteo",
     "elevacao pelvica": "Glúteo",
+    "sumô": "Glúteo",
+    "sumo": "Glúteo",
 
+    # =========================
+    # PANTURRILHA
+    # =========================
     "panturrilha": "Panturrilha",
     "panturrilha em pé": "Panturrilha",
+    "panturrilha em pe": "Panturrilha",
     "panturrilha sentado": "Panturrilha",
     "panturrilha leg press": "Panturrilha",
     "panturrilha máquina": "Panturrilha",
+    "panturrilha maquina": "Panturrilha",
 
+    # =========================
+    # ABDÔMEN
+    # =========================
     "abdominal": "Abdômen",
     "abdominal infra": "Abdômen",
     "abdominal supra": "Abdômen",
     "abdominal máquina": "Abdômen",
+    "abdominal maquina": "Abdômen",
     "ab wheel": "Abdômen",
     "prancha": "Abdômen",
     "crunch": "Abdômen",
     "leg raise": "Abdômen",
     "elevação de pernas": "Abdômen",
+    "elevacao de pernas": "Abdômen",
 }
 
 POSSIVEIS_COLUNAS_EXERCICIO = ["Exercicio", "Exercício", "Nome", "Exercicio "]
@@ -177,7 +239,6 @@ st.set_page_config(page_title="Treinos", page_icon="🏋️", layout="wide")
 def get_gspread_client():
     if "gcp_service_account" in st.secrets:
         return gspread.service_account_from_dict(dict(st.secrets["gcp_service_account"]))
-
     return gspread.service_account(filename="credenciais.json")
 
 
@@ -194,7 +255,7 @@ def get_worksheet(sheet_name: str) -> Worksheet:
 @st.cache_data(ttl=30)
 def read_sheet(sheet_name: str) -> pd.DataFrame:
     ws = get_worksheet(sheet_name)
-    values = ws.get("A:L")
+    values = ws.get_all_values()
 
     if not values:
         return pd.DataFrame()
@@ -276,6 +337,91 @@ def calcular_1rm(peso: float, reps: float) -> float:
     return float(peso) * (1 + (float(reps) / 30))
 
 
+def col_or_default(df: pd.DataFrame, nome: str, valor_padrao="") -> pd.DataFrame:
+    df = df.copy()
+    if nome not in df.columns:
+        df[nome] = valor_padrao
+    return df
+
+
+def padronizar_ficha_df(df_ficha: pd.DataFrame) -> pd.DataFrame:
+    if df_ficha.empty:
+        return pd.DataFrame(columns=["Exercicio", "Grupo", "Series", "Reps"])
+
+    df = normalizar_colunas(df_ficha.copy())
+
+    col_ex = achar_coluna(df, POSSIVEIS_COLUNAS_EXERCICIO)
+    col_gr = achar_coluna(df, POSSIVEIS_COLUNAS_GRUPO)
+    col_se = achar_coluna(df, POSSIVEIS_COLUNAS_SERIES)
+    col_re = achar_coluna(df, POSSIVEIS_COLUNAS_REPS)
+
+    novo = pd.DataFrame()
+
+    if col_ex:
+        novo["Exercicio"] = df[col_ex].astype(str)
+    else:
+        novo["Exercicio"] = ""
+
+    if col_gr:
+        novo["Grupo"] = df[col_gr].astype(str)
+    else:
+        novo["Grupo"] = novo["Exercicio"].apply(inferir_grupo)
+
+    if col_se:
+        novo["Series"] = df[col_se].apply(lambda x: to_int(x, 0))
+    else:
+        novo["Series"] = 0
+
+    if col_re:
+        novo["Reps"] = df[col_re].apply(lambda x: to_int(x, 0))
+    else:
+        novo["Reps"] = 0
+
+    novo["Exercicio"] = novo["Exercicio"].astype(str).str.strip()
+    novo["Grupo"] = novo["Grupo"].astype(str).str.strip()
+    novo = novo[novo["Exercicio"] != ""].reset_index(drop=True)
+
+    return novo
+
+
+def serializar_ficha(df_ficha: pd.DataFrame) -> list[dict]:
+    df = padronizar_ficha_df(df_ficha)
+    return df.to_dict("records")
+
+
+def desserializar_ficha(registros: list[dict]) -> pd.DataFrame:
+    if not registros:
+        return pd.DataFrame(columns=["Exercicio", "Grupo", "Series", "Reps"])
+    return padronizar_ficha_df(pd.DataFrame(registros))
+
+
+def limpar_fichas_duplicadas_mesmo_timestamp(df: pd.DataFrame) -> pd.DataFrame:
+    if df.empty:
+        return df
+
+    col_data = achar_coluna(df, POSSIVEIS_COLUNAS_DATA)
+    col_ex = achar_coluna(df, POSSIVEIS_COLUNAS_EXERCICIO)
+    col_cpf = achar_coluna(df, POSSIVEIS_COLUNAS_CPF)
+    col_treino = achar_coluna(df, POSSIVEIS_COLUNAS_TREINO)
+
+    if not all([col_data, col_ex, col_cpf, col_treino]):
+        return df
+
+    return df.drop_duplicates(subset=[col_data, col_cpf, col_treino, col_ex], keep="last")
+
+
+def obter_timestamp_mais_recente(df: pd.DataFrame, col_data: str) -> Optional[pd.Timestamp]:
+    if df.empty:
+        return None
+
+    serie = pd.to_datetime(df[col_data], errors="coerce", dayfirst=True).dropna()
+
+    if serie.empty:
+        return None
+
+    return serie.max()
+
+
 # =========================
 # MODELAGEM COM SKLEARN
 # =========================
@@ -318,14 +464,12 @@ def carga_sugerida(y: np.ndarray) -> float:
     if prox < 0:
         prox = ultimo
 
-    # trava simples para não sugerir salto absurdo
-    limite_superior = ultimo * 1.08
-    limite_inferior = ultimo * 0.92
+    limite_superior = ultimo * 1.05
+    limite_inferior = ultimo * 0.95
 
     prox = min(prox, limite_superior)
     prox = max(prox, limite_inferior)
 
-    # arredonda para 0.5 kg
     return round(prox * 2) / 2
 
 
@@ -441,8 +585,9 @@ def registrar_series_em_lote(registros: list[list]) -> None:
     ws = get_worksheet(SHEET_HISTORICO)
     ws.append_rows(registros, value_input_option="USER_ENTERED")
     st.cache_data.clear()
-def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
 
+
+def salvar_ficha_usuario(cpf: str, treino: str, ficha: list[dict]) -> None:
     ws = get_worksheet(SHEET_HISTORICO)
 
     agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
@@ -451,16 +596,22 @@ def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
     registros = []
 
     for ex in ficha:
+        exercicio = ex.get("Exercicio") or ex.get("Exercício") or ex.get("Nome") or ""
+        exercicio = str(exercicio).strip()
 
-        exercicio = ex.get("Exercicio")
+        if not exercicio:
+            continue
+
+        grupo = ex.get("Grupo", "")
+        grupo = str(grupo).strip() if str(grupo).strip() else inferir_grupo(exercicio)
 
         registros.append([
             agora,
-            cpf,
+            str(cpf).strip(),
             semana,
             treino,
             f"FICHA::{exercicio}",
-            inferir_grupo(exercicio),
+            grupo,
             "",
             ex.get("Reps", ""),
             ex.get("Series", ""),
@@ -469,104 +620,76 @@ def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
             "FICHA_USUARIO"
         ])
 
-    ws.append_rows(registros, value_input_option="USER_ENTERED")
-
-    st.cache_data.clear()
-
-    registros = []
-
-    for ex in ficha:
-
-        exercicio = ex.get("Exercicio") or ex.get("Exercício")
-
-        registros.append([
-            agora,
-            cpf,
-            semana,
-            treino,
-            f"FICHA::{exercicio}",
-            inferir_grupo(exercicio),
-            "",
-            ex.get("Reps", ""),
-            ex.get("Series", ""),
-            "",
-            "",
-            "FICHA_USUARIO"
-        ])
-
-    ws.append_rows(registros, value_input_option="USER_ENTERED")
-
-    st.cache_data.clear()
-
-    registros = []
-
-    agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-    semana = int(datetime.now().isocalendar()[1])
-
-    for ex in ficha:
-
-        exercicio = ex.get("Exercicio") or ex.get("Exercício") or ex.get("Nome")
-
-        registros.append([
-            agora,
-            cpf,
-            semana,
-            treino,
-            f"FICHA::{exercicio}",
-            inferir_grupo(exercicio),
-            "",
-            ex.get("Reps", ""),
-            ex.get("Series", ""),
-            "",
-            "",
-            "FICHA_USUARIO"
-        ])
-
-    ws.append_rows(registros, value_input_option="USER_ENTERED")
-
-    st.cache_data.clear()
+    if registros:
+        ws.append_rows(registros, value_input_option="USER_ENTERED")
+        st.cache_data.clear()
 
 
-def carregar_ficha_usuario(df_hist, cpf, treino):
-
+def carregar_ficha_usuario(df_hist: pd.DataFrame, cpf: str, treino: str) -> Optional[list[dict]]:
     if df_hist.empty:
         return None
 
     col_ex = achar_coluna(df_hist, POSSIVEIS_COLUNAS_EXERCICIO)
     col_cpf = achar_coluna(df_hist, POSSIVEIS_COLUNAS_CPF)
     col_treino = achar_coluna(df_hist, POSSIVEIS_COLUNAS_TREINO)
+    col_data = achar_coluna(df_hist, POSSIVEIS_COLUNAS_DATA)
+    col_series = achar_coluna(df_hist, POSSIVEIS_COLUNAS_SERIES)
+    col_reps = achar_coluna(df_hist, POSSIVEIS_COLUNAS_REPS)
+    col_grupo = achar_coluna(df_hist, POSSIVEIS_COLUNAS_GRUPO)
 
-    if not col_ex:
+    if not col_ex or not col_cpf or not col_treino or not col_data:
         return None
 
     df = df_hist.copy()
+    df[col_cpf] = df[col_cpf].astype(str).str.strip()
+    df[col_treino] = df[col_treino].astype(str).str.strip()
+    df[col_ex] = df[col_ex].astype(str).str.strip()
 
     df = df[
-        (df[col_cpf].astype(str) == str(cpf)) &
-        (df[col_treino] == treino) &
-        (df[col_ex].astype(str).str.startswith("FICHA::"))
-    ]
+        (df[col_cpf] == str(cpf).strip()) &
+        (df[col_treino] == str(treino).strip()) &
+        (df[col_ex].str.startswith("FICHA::"))
+    ].copy()
 
     if df.empty:
         return None
 
+    df[col_data] = pd.to_datetime(df[col_data], errors="coerce", dayfirst=True)
+    df = df.dropna(subset=[col_data])
+
+    if df.empty:
+        return None
+
+    ultimo_timestamp = df[col_data].max()
+    df = df[df[col_data] == ultimo_timestamp].copy()
+
+    df = limpar_fichas_duplicadas_mesmo_timestamp(df)
+
     ficha = []
 
     for _, row in df.iterrows():
+        exercicio = str(row[col_ex]).replace("FICHA::", "").strip()
+        if not exercicio:
+            continue
 
-        exercicio = str(row[col_ex]).replace("FICHA::", "")
+        grupo = str(row[col_grupo]).strip() if col_grupo and str(row[col_grupo]).strip() else inferir_grupo(exercicio)
+        series = to_int(row[col_series], 3) if col_series and col_series in row.index else 3
+        reps = to_int(row[col_reps], 10) if col_reps and col_reps in row.index else 10
 
         ficha.append({
             "Exercicio": exercicio,
-            "Grupo": inferir_grupo(exercicio),
-            "Series": to_int(row.get("Series", 3)),
-            "Reps": to_int(row.get("Reps", 10))
+            "Grupo": grupo,
+            "Series": series,
+            "Reps": reps
         })
+
+    if not ficha:
+        return None
 
     return ficha
 
-def atualizar_ficha_treino(nome_treino: str, df_editado: pd.DataFrame):
 
+def atualizar_ficha_treino(nome_treino: str, df_editado: pd.DataFrame):
     if df_editado.empty:
         raise ValueError("A ficha não pode ficar vazia.")
 
@@ -578,6 +701,7 @@ def atualizar_ficha_treino(nome_treino: str, df_editado: pd.DataFrame):
     ws.update("A1", dados)
 
     st.cache_data.clear()
+
 
 # =========================
 # PREPARAÇÃO DO DF DE PROGRESSO
@@ -614,6 +738,7 @@ def preparar_df_progresso(df_hist_paciente: pd.DataFrame) -> tuple[pd.DataFrame,
         return pd.DataFrame(), info
 
     df = df[df[info["col_ex"]].astype(str).str.strip() != "CALORIAS_TREINO"].copy()
+    df = df[~df[info["col_ex"]].astype(str).str.startswith("FICHA::")].copy()
 
     df[info["col_peso"]] = pd.to_numeric(df[info["col_peso"]], errors="coerce")
 
@@ -671,12 +796,14 @@ with st.sidebar:
 
     pagina = st.radio("Página", ["Treino", "Progresso"], horizontal=False)
     cpf = st.text_input("CPF do paciente", placeholder="Digite o CPF")
+
     if "cpf_atual" not in st.session_state:
         st.session_state.cpf_atual = cpf
+
     if st.session_state.cpf_atual != cpf:
         st.session_state.pop("ficha_edit", None)
         st.session_state.cpf_atual = cpf
-        
+
     df_pacientes = carregar_pacientes()
     nome_paciente = ""
 
@@ -711,32 +838,32 @@ if not cpf:
 try:
     df_hist = carregar_historico()
     if pagina == "Treino":
-        df_treino = carregar_treino(treino_escolhido)
+        df_treino_base = carregar_treino(treino_escolhido)
     else:
-        df_treino = pd.DataFrame()
+        df_treino_base = pd.DataFrame()
 except Exception as e:
     st.error("Não consegui abrir a planilha. Verifique as credenciais e o compartilhamento com a conta de serviço.")
     st.exception(e)
     st.stop()
 
 df_hist = normalizar_colunas(df_hist)
-df_treino = normalizar_colunas(df_treino)
+df_treino_base = normalizar_colunas(df_treino_base)
 df_hist_paciente = filtrar_historico_paciente(df_hist, cpf)
 
 # =========================
 # PÁGINA TREINO
 # =========================
 if pagina == "Treino":
-    if df_treino.empty:
+    if df_treino_base.empty:
         st.error(f"A aba {treino_escolhido} está vazia.")
         st.stop()
 
-    col_exercicio = achar_coluna(df_treino, POSSIVEIS_COLUNAS_EXERCICIO)
-    col_series = achar_coluna(df_treino, POSSIVEIS_COLUNAS_SERIES)
-    col_reps = achar_coluna(df_treino, POSSIVEIS_COLUNAS_REPS)
-    col_grupo = achar_coluna(df_treino, POSSIVEIS_COLUNAS_GRUPO)
+    col_exercicio_base = achar_coluna(df_treino_base, POSSIVEIS_COLUNAS_EXERCICIO)
+    col_series_base = achar_coluna(df_treino_base, POSSIVEIS_COLUNAS_SERIES)
+    col_reps_base = achar_coluna(df_treino_base, POSSIVEIS_COLUNAS_REPS)
+    col_grupo_base = achar_coluna(df_treino_base, POSSIVEIS_COLUNAS_GRUPO)
 
-    if not col_exercicio:
+    if not col_exercicio_base:
         st.error(f"A aba {treino_escolhido} precisa ter uma coluna de exercício.")
         st.stop()
 
@@ -747,7 +874,7 @@ if pagina == "Treino":
         st.metric("Treino atual", treino_escolhido)
     with c3:
         total_exercicios = int(
-            df_treino[col_exercicio]
+            df_treino_base[col_exercicio_base]
             .astype(str)
             .str.strip()
             .replace("", pd.NA)
@@ -758,30 +885,29 @@ if pagina == "Treino":
 
     st.divider()
 
-    resumo_df = df_treino.copy()
-    cols_mostrar = [c for c in [col_exercicio, col_grupo, col_series, col_reps] if c]
+    resumo_df = padronizar_ficha_df(df_treino_base.copy())
 
     with st.expander("Ver ficha do treino"):
-        st.dataframe(resumo_df[cols_mostrar], use_container_width=True, hide_index=True)       
+        st.dataframe(resumo_df[["Exercicio", "Grupo", "Series", "Reps"]], use_container_width=True, hide_index=True)
 
     with st.expander("✏️ Editar exercícios do treino"):
-
         st.caption("Troque exercícios, remova ou adicione novos.")
 
-        lista_exercicios = sorted(MAP_GRUPOS.keys())            
-        if "ficha_edit" not in st.session_state:
+        lista_exercicios = sorted(MAP_GRUPOS.keys())
 
+        if "ficha_edit" not in st.session_state:
             ficha_usuario = carregar_ficha_usuario(df_hist, cpf, treino_escolhido)
 
             if ficha_usuario:
                 st.session_state.ficha_edit = ficha_usuario
             else:
-                st.session_state.ficha_edit = resumo_df[cols_mostrar].to_dict("records")            
+                st.session_state.ficha_edit = resumo_df.to_dict("records")
+
+        ficha_atual_df = desserializar_ficha(st.session_state.ficha_edit)
         nova_ficha = []
 
-        for i, ex in enumerate(st.session_state.ficha_edit):
-
-            col1, col2, col3, col4 = st.columns([3,1,1,1])
+        for i, ex in enumerate(ficha_atual_df.to_dict("records")):
+            col1, col2, col3, col4 = st.columns([3, 1, 1, 1])
 
             with col1:
                 exercicio = st.selectbox(
@@ -796,7 +922,7 @@ if pagina == "Treino":
                     "Séries",
                     min_value=0,
                     step=1,
-                    value=to_int(ex.get(col_series, 0)),
+                    value=to_int(ex.get("Series", 0)),
                     key=f"edit_series_{i}"
                 )
 
@@ -805,7 +931,7 @@ if pagina == "Treino":
                     "Reps",
                     min_value=0,
                     step=1,
-                    value=to_int(ex.get(col_reps, 0)),
+                    value=to_int(ex.get("Reps", 0)),
                     key=f"edit_reps_{i}"
                 )
 
@@ -814,26 +940,25 @@ if pagina == "Treino":
 
             if not remover:
                 nova_ficha.append({
-                  "Exercicio": exercicio,
-                  "Grupo": MAP_GRUPOS.get(normalizar_texto(exercicio), "Outro"),
-                  "Series": series,
-                  "Reps": reps
+                    "Exercicio": exercicio,
+                    "Grupo": MAP_GRUPOS.get(normalizar_texto(exercicio), "Outro"),
+                    "Series": series,
+                    "Reps": reps
                 })
 
         st.divider()
 
         if st.button("➕ Adicionar exercício"):
             nova_ficha.append({
-                col_exercicio: lista_exercicios[0],
-                col_grupo: MAP_GRUPOS[lista_exercicios[0]],
-                col_series: 3,
-                col_reps: 10
+                "Exercicio": lista_exercicios[0],
+                "Grupo": MAP_GRUPOS.get(normalizar_texto(lista_exercicios[0]), "Outro"),
+                "Series": 3,
+                "Reps": 10
             })
             st.session_state.ficha_edit = nova_ficha
             st.rerun()
-            
-        if st.button("💾 Salvar ficha"):
 
+        if st.button("💾 Salvar ficha"):
             if len(nova_ficha) == 0:
                 st.error("A ficha não pode ficar vazia.")
                 st.stop()
@@ -844,6 +969,7 @@ if pagina == "Treino":
                 salvar_ficha_usuario(cpf, treino_escolhido, nova_ficha)
                 st.success("Ficha atualizada com sucesso.")
                 st.session_state.ficha_edit = df_salvar.to_dict("records")
+                st.cache_data.clear()
                 st.rerun()
 
             except Exception as e:
@@ -851,13 +977,23 @@ if pagina == "Treino":
                 st.exception(e)
 
         st.session_state.ficha_edit = nova_ficha
+
     st.caption("A tela mostra só o necessário: último peso, média, melhor peso e sugestão de próxima carga.")
 
     registros_para_salvar = []
+
     if "ficha_edit" in st.session_state and st.session_state.ficha_edit:
-      df_treino = pd.DataFrame(st.session_state.ficha_edit)
+        df_treino_ativo = desserializar_ficha(st.session_state.ficha_edit)
+    else:
+        df_treino_ativo = resumo_df.copy()
+
+    col_exercicio = "Exercicio"
+    col_series = "Series"
+    col_reps = "Reps"
+    col_grupo = "Grupo"
+
     with st.form("form_registro"):
-        for i, row in df_treino.reset_index(drop=True).iterrows():
+        for i, row in df_treino_ativo.reset_index(drop=True).iterrows():
             exercicio = str(row.get(col_exercicio, "")).strip()
             if not exercicio:
                 continue
@@ -873,6 +1009,7 @@ if pagina == "Treino":
             melhor_peso = melhor_peso_exercicio(df_hist_paciente, exercicio)
 
             hist_ex = historico_exercicio(df_hist_paciente, exercicio)
+
             col_hist_peso = achar_coluna(hist_ex, POSSIVEIS_COLUNAS_PESO) if not hist_ex.empty else None
 
             ultimo_peso = ""
@@ -955,11 +1092,12 @@ if pagina == "Treino":
 
     if salvar:
         garantir_colunas_historico()
+
         data_dt = datetime.now()
         data_agora = data_dt.strftime("%d/%m/%Y %H:%M:%S")
         semana = int(data_dt.isocalendar()[1])
 
-        for i, row in df_treino.reset_index(drop=True).iterrows():
+        for i, row in df_treino_ativo.reset_index(drop=True).iterrows():
             exercicio = str(row.get(col_exercicio, "")).strip()
             if not exercicio:
                 continue
@@ -1304,8 +1442,8 @@ elif pagina == "Progresso":
     st.dataframe(hist, use_container_width=True, hide_index=True)
 
 st.divider()
-
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
 
 
