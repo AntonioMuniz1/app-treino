@@ -194,7 +194,7 @@ def get_worksheet(sheet_name: str) -> Worksheet:
 @st.cache_data(ttl=30)
 def read_sheet(sheet_name: str) -> pd.DataFrame:
     ws = get_worksheet(sheet_name)
-    values = ws.get_all_values()
+    values = ws.get("A:L")
 
     if not values:
         return pd.DataFrame()
@@ -447,6 +447,31 @@ def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
 
     agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
     semana = int(datetime.now().isocalendar()[1])
+
+    registros = []
+
+    for ex in ficha:
+
+        exercicio = ex.get("Exercicio")
+
+        registros.append([
+            agora,
+            cpf,
+            semana,
+            treino,
+            f"FICHA::{exercicio}",
+            inferir_grupo(exercicio),
+            "",
+            ex.get("Reps", ""),
+            ex.get("Series", ""),
+            "",
+            "",
+            "FICHA_USUARIO"
+        ])
+
+    ws.append_rows(registros, value_input_option="USER_ENTERED")
+
+    st.cache_data.clear()
 
     registros = []
 
@@ -762,7 +787,7 @@ if pagina == "Treino":
                 exercicio = st.selectbox(
                     "Exercício",
                     lista_exercicios,
-                    index=lista_exercicios.index(ex[col_exercicio]) if ex[col_exercicio] in lista_exercicios else 0,
+                    index=lista_exercicios.index(ex["Exercicio"]) if ex["Exercicio"] in lista_exercicios else 0,
                     key=f"edit_ex_{i}"
                 )
 
@@ -789,10 +814,10 @@ if pagina == "Treino":
 
             if not remover:
                 nova_ficha.append({
-                    col_exercicio: exercicio,
-                    col_grupo: MAP_GRUPOS.get(normalizar_texto(exercicio), "Outro"),
-                    col_series: series,
-                    col_reps: reps
+                  "Exercicio": exercicio,
+                  "Grupo": MAP_GRUPOS.get(normalizar_texto(exercicio), "Outro"),
+                  "Series": series,
+                  "Reps": reps
                 })
 
         st.divider()
@@ -829,7 +854,8 @@ if pagina == "Treino":
     st.caption("A tela mostra só o necessário: último peso, média, melhor peso e sugestão de próxima carga.")
 
     registros_para_salvar = []
-
+    if "ficha_edit" in st.session_state and st.session_state.ficha_edit:
+      df_treino = pd.DataFrame(st.session_state.ficha_edit)
     with st.form("form_registro"):
         for i, row in df_treino.reset_index(drop=True).iterrows():
             exercicio = str(row.get(col_exercicio, "")).strip()
@@ -1280,6 +1306,7 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
 
 
