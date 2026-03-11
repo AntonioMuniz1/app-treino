@@ -445,18 +445,33 @@ def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
 
     ws = get_worksheet(SHEET_HISTORICO)
 
-    # remover fichas antigas desse CPF
-    dados = ws.get_all_values()
-    cab = dados[0]
-    linhas = dados[1:]
+    agora = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    semana = int(datetime.now().isocalendar()[1])
 
-    novas_linhas = [
-        l for l in linhas
-        if not (l[1] == str(cpf) and str(l[4]).startswith("FICHA::"))
-    ]
+    registros = []
 
-    ws.clear()
-    ws.update("A1", [cab] + novas_linhas)
+    for ex in ficha:
+
+        exercicio = ex.get("Exercicio") or ex.get("Exercício")
+
+        registros.append([
+            agora,
+            cpf,
+            semana,
+            treino,
+            f"FICHA::{exercicio}",
+            inferir_grupo(exercicio),
+            "",
+            ex.get("Reps", ""),
+            ex.get("Series", ""),
+            "",
+            "",
+            "FICHA_USUARIO"
+        ])
+
+    ws.append_rows(registros, value_input_option="USER_ENTERED")
+
+    st.cache_data.clear()
 
     registros = []
 
@@ -465,7 +480,7 @@ def salvar_ficha_usuario(cpf: str, treino: str, ficha: list):
 
     for ex in ficha:
 
-        exercicio = ex.get("Exercicio") or ex.get("Exercício")
+        exercicio = ex.get("Exercicio") or ex.get("Exercício") or ex.get("Nome")
 
         registros.append([
             agora,
@@ -1265,6 +1280,7 @@ elif pagina == "Progresso":
 st.divider()
 
 st.caption("Versão refeita com sklearn, volume, 1RM, progressive overload, overtraining, score de força e deload.")
+
 
 
 
